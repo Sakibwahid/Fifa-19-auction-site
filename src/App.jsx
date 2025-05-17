@@ -47,11 +47,10 @@ function App() {
           <Route path="/players" element={<Players />} />
           <Route path="/players/:playerId" element={<PlayerDetails />} />
 
-          //private routes admin role needed
           <Route
             path="/admin"
             element={
-              <ProtectedRoute requiredrole="admin">
+              <ProtectedRoute requiredRole="admin">
                 <Admin />
               </ProtectedRoute>
             }
@@ -74,7 +73,7 @@ function App() {
           />
 
 
-          //private routes user role needed
+
           <Route path="/user" element={
             <ProtectedRoute requiredRole="user">
               <User />
