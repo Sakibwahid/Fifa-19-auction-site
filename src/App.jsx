@@ -1,0 +1,103 @@
+import { Routes, Route } from "react-router-dom";
+import { Navbar } from "./components/Navbar";
+import Home from "./pages/home";
+import Login from "./pages/Login";
+import About from "./pages/about";
+import "./App.css";
+import Admin from "./pages/admin";
+import AuctionForm from "./components/AuctionForm";
+import Auctionpage from "./pages/auctionpage";
+import Players from "./pages/players";
+import PlayerDetails from "./pages/playerdetails";
+import User from "./pages/user";
+import Usersignup from "./pages/Usersignup";
+import { ProtectedRoute } from "./auth/ProtectedRoute";
+import { Authcontext } from "./auth/Authcontext";
+import { useEffect, useContext,useState} from "react";
+import CreateSquad from "./pages/CreateSquad";
+import { Squad } from "./pages/Squad";
+
+function App() {
+  const [role, setRole] = useState({ role: localStorage.getItem("role")});
+
+  const [userdata, login, logout] = useContext(Authcontext);
+
+  return (
+    <div className="flex min-h-screen bg-gradient-to-t from-[#1D5AD0] to-[#0c368a]">
+      <div className='fixed inset-0 bg-[url("/png.png")] bg-no-repeat bg-cover opacity-60'></div>
+
+      <div className="w-30 hidden md:block">
+        <Navbar />
+      </div>
+      <div className="flex-1 mx-4">
+        <Routes>
+          
+          //public routes
+          <Route 
+            path="/" 
+            element={
+              role.role === "admin" ? <Admin /> :
+              role.role === "user" ? <User /> :
+              <Home />
+            } 
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/login/:usersignup" element={<Usersignup />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/players" element={<Players />} />
+          <Route path="/players/:playerId" element={<PlayerDetails />} />
+
+          //private routes admin role needed
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute requiredrole="admin">
+                <Admin />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="admin/auctionform"
+            element={
+              <ProtectedRoute requiredRole="admin">
+                <AuctionForm />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/auctionpage"
+            element={
+              <ProtectedRoute requiredRole="admin">
+                <Auctionpage />
+              </ProtectedRoute>
+            }
+          />
+
+
+          //private routes user role needed
+          <Route path="/user" element={
+            <ProtectedRoute requiredRole="user">
+              <User />
+            </ProtectedRoute> 
+          } />
+           <Route path="/Createsquad" element={
+            <ProtectedRoute requiredRole="user">
+              <CreateSquad />
+            </ProtectedRoute> 
+          } />
+          <Route path="/Createsquad/Squad" element={
+            <ProtectedRoute requiredRole="user">
+              <Squad />
+            </ProtectedRoute> 
+          } />
+
+        </Routes>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+
+
