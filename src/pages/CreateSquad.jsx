@@ -2,7 +2,7 @@ import  {useContext,useEffect,useState} from 'react';
 import { Authcontext } from '../auth/Authcontext';
 import { motion } from "framer-motion";
 import { Text } from '../components/Text';
-import PlayerList from '../components/PLayerList';
+import PlayerList from '../components/PlayerList';
 const CreateSquad =() => {
     
    return(
