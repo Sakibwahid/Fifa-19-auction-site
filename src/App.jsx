@@ -56,7 +56,7 @@ function App() {
             }
           />
           <Route
-            path="admin/auctionform"
+            path="/auctionform"
             element={
               <ProtectedRoute requiredRole="admin">
                 <AuctionForm />
