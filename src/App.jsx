@@ -23,16 +23,15 @@ function App() {
   const [userdata, login, logout] = useContext(Authcontext);
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-t from-[#1D5AD0] to-[#0c368a]">
+    <div className="flex flex-col md:flex-row justify-between min-h-screen bg-gradient-to-t from-[#1D5AD0] to-[#0c368a]">
+      
       <div className='fixed inset-0 bg-[url("/png.png")] bg-no-repeat bg-cover opacity-60'></div>
 
-      <div className="w-30 hidden md:block">
+      <div className="w-full md:w-32">
         <Navbar />
       </div>
-      <div className="flex-1 mx-4">
+      <div className="w-full p-2 flex justify-center items-center">
         <Routes>
-          
-          //public routes
           <Route 
             path="/" 
             element={
