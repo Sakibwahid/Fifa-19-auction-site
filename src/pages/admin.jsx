@@ -20,7 +20,7 @@ const Admin = () => {
             View Dashboard
           </Button>
           <Button size="md" onClick={() => console.log("Launch Auction")}>
-           <Anchor to="auctionform">Launch Auction</Anchor> 
+           <Anchor to="/auctionform">Launch Auction</Anchor> 
           </Button>
         </div>
         <Outlet></Outlet>
