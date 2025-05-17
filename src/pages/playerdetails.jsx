@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Text } from "../components/Text";
 import playerImages from "../assets/playerImages";
-import { Stats } from "../components/stats";
+import { Stats } from "../components/Stats";
 import { Stars } from "../components/Stars";
 
 
