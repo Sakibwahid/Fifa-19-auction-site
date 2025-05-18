@@ -33,6 +33,7 @@ const Login = () => {
       window.location.href = "/admin"; // Redirect to the next page
     } 
     else if((email===userEmail|| email===userName)&& password===userPassword){
+      localStorage.setItem("role", "user");
       window.location.href = "/user"
     }
     else{
@@ -48,7 +49,7 @@ const Login = () => {
   }
 
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div className="flex justify-center items-center">
       <div className="w-full max-w-md flex flex-col gap-6 justify-center items-center 
         backdrop-blur-xl bg-white/5  border-white/20 shadow-lg 
         rounded-2xl px-6 py-10">
