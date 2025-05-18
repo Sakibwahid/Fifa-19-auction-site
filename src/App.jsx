@@ -29,7 +29,7 @@ function App() {
       <div className="w-full md:w-32">
         <Navbar />
       </div>
-      <div className="w-full p-2 flex flex-1 justify-center items-center">
+      <div className="flex-1 h-screen overflow-y-scroll">
         <Routes>
           <Route 
             path="/" 
