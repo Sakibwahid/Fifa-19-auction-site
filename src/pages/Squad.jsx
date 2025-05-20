@@ -15,10 +15,10 @@ export const Squad = () => {
     let totalvalue = 0;
 
     selectedplayerarray.forEach(player => {
-        const value= Number(player.Value.replace('€', '').replace('M', '').replace('K', ''));
+        const value = Number(player.Value.replace('€', '').replace('M', '').replace('K', ''));
         totalvalue += value;
     });
-
+    const increasedValue = (totalvalue * 1.2).toFixed(2);
 
     selectedplayerarray.forEach(player => {
         if (groupedPlayers[player.Position]) {
@@ -29,12 +29,15 @@ export const Squad = () => {
     return (
         <div className='mt-10 w-full p-2 flex flex-col justify-center items-center '>
 
-            <div className='z-50 w-full md:w-[80%] lg:w-[60%] flex flex-col gap-6 justify-center items-center'>
-
+            <div className='z-10 w-full md:w-[80%] lg:w-[60%] flex flex-col gap-6 justify-center items-center'>
 
                 <div className='w-full flex flex-col justify-center gap-6 items-center'>
                     <Text variant='heading'>Selected Player</Text>
-                    <Text variant='para' className='text-white font-normal'>You have selected Number{selectedplayerarray.length} players. These players are arranged in the order to forward, Midfield and Defense then GK €{totalvalue}M </Text>
+                    <Text variant='para' className='text-white font-normal'>
+                        You have selected {selectedplayerarray.length} players. These players are arranged in the order to forward, Midfield and Defense then GK <br /><br />
+                        Estimated market value : <span className='text-2xl font-semibold text-[#41FFEE]'>€{totalvalue}M</span> <br />
+                        Estimated auction value : <span className='text-[#41FFEE] text-2xl font-semibold'>€{increasedValue}M</span>
+                    </Text>
                 </div>
 
 
