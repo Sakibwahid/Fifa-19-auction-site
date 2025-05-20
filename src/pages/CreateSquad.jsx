@@ -20,7 +20,7 @@ const CreateSquad = () => {
               <Text variant='para' className='' >This is a listed view of all the players instead of a detailed or card view, making the selection process simpler. To check a player's full details, just click on them, and you'll be redirected to their profile. Want to add them to your squad? Just click the Select button—just like shopping for your dream players!.</Text>
             </div>
           </div>
-          <div >
+          <div>
             <PlayerList ></PlayerList>
           </div>
         </div>

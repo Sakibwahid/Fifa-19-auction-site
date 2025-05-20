@@ -13,7 +13,7 @@ const User = () => {
 
 
    return (
-      <div className="h-full flex items-center justify-center px-4 lg:px-6 text-center">
+      <div className="md:h-full flex items-center justify-center px-4 lg:px-6 text-center">
          <motion.div
             className="z-10 flex flex-col gap-6 items-center"
             initial={{ opacity: 0, y: 20 }}

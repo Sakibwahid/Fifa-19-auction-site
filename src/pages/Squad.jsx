@@ -34,9 +34,7 @@ export const Squad = () => {
 
         }
     });
-    console.log(groupedPlayers["ST"]);
-
-
+ 
     return (
         <div>
             {selectedplayerarray.length === 0 ? (
@@ -44,7 +42,7 @@ export const Squad = () => {
                     No Players Selected
                 </div>
             ) : (
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col justify-start items-start gap-2">
                     {Object.entries(groupedPlayers).map(([position, players]) => (
                         <div key={position} className="z-50">
                          <Text variant="subheading" className="text-2xl">{position}</Text>

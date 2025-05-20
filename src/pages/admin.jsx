@@ -6,8 +6,7 @@ import { Outlet } from "react-router-dom";
 const Admin = () => {
 
   return (
-    <div className="mt-10 min-h-screen flex justify-center items-center">
-
+    <div className="mt-10 md:h-full text-center flex justify-center items-center">
       <div className="z-10 flex flex-col gap-6 justify-center items-center">
         <Text variant="heading" className="text-white">
           Welcome To Admin Panel

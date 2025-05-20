@@ -34,7 +34,7 @@ const Players = () => {
                         onChange={(e) => setRating(Number(e.target.value))}
                     />
                 </div>
-                <div className="grid justify-center items-center grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <div className="grid justify-center items-center grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {data.map((player, index) => (
                         <PlayerCard key={index} player={player} />
                     ))}
