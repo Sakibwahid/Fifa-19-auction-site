@@ -46,7 +46,7 @@ export function Navbar() {
         </button>
 
         {mobilemenu && (
-          <div className="absolute top-12 right-0 backdrop-blur-xl bg-white/5 rounded-xl shadow-lg p-4 z-50">
+          <div className="absolute top-14 right-0 h-screen backdrop-blur-xl bg-white/5 rounded-xl shadow-lg p-4 z-50">
             <ul className="flex flex-col items-center gap-4 text-left">
               <NavItem label="Home" link="/" Icon={Home} />
               <NavItem label="Players" link="/players" Icon={User} />
