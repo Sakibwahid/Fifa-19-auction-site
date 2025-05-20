@@ -28,7 +28,7 @@ function App() {
       <div className="w-full md:w-32">
         <Navbar />
       </div>
-      <div className="flex-1 h-screen md:block flex justify-center overflow-y-scroll ">
+      <div className="flex-1 h-screen md:block flex justify-center items-center overflow-y-scroll">
         <Routes>
           <Route 
             path="/" 

@@ -14,7 +14,7 @@ const AuctionForm = () => {
   } = useContext(ContextApi);
 
   return (
-    <div className="my-24 flex justify-center items-center">
+    <div className="p-2 md:h-full flex justify-center items-center">
       <div className="relative w-full max-w-md flex flex-col gap-6 justify-center items-center">
         <div className="absolute inset-0 backdrop-blur-sm sm:backdrop-blur-md bg-white/5 border border-white/20 shadow-lg rounded-2xl z-0"></div>
         <div className="relative z-10 w-full flex flex-col gap-6 justify-center items-center bg-white/10 rounded-2xl px-6 py-10">

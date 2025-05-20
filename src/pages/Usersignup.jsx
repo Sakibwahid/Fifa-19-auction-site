@@ -26,7 +26,7 @@ const Usersignup = () => {
     }
 
     return (
-        <div className="min-h-screen flex justify-center items-center">
+        <div className="p-2 md:h-full flex justify-center items-center">
             <div className="w-full max-w-md flex flex-col gap-6 justify-center items-center 
                 backdrop-blur-xl bg-white/5 border border-white/20 shadow-lg 
                  rounded-2xl px-2 py-10">
