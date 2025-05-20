@@ -10,6 +10,7 @@ const PlayerDetails = () => {
     const location = useLocation();
     const [player, setPlayer] = useState(() => { return JSON.parse(localStorage.getItem("player")) || location.state?.player || null });
     const playerimage = playerImages.find(p => p.name === player.Name)?.image || "/players/default.jpg"
+    
     useEffect(() => {
         if (location.state?.player) {
             localStorage.setItem("player", JSON.stringify(location.state.player));

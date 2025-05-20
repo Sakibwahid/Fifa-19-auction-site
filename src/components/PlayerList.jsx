@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Text } from "./Text";
 import { Input } from "./Input";
 import PlayerFetch from "./PlayerFetch";
@@ -15,6 +15,25 @@ const PlayerList = () => {
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
+
+    const handleSelection = () => {
+        const selectedPlayers = data.filter(player => selectedplayerarray.includes(player.Name));
+
+        // Get existing players from localStorage
+        const existingPlayers = JSON.parse(localStorage.getItem("selectedplayers")) || [];
+
+        // Merge: avoid duplicates by name
+        const mergedPlayers = [...existingPlayers];
+
+        selectedPlayers.forEach(player => {
+            if (!mergedPlayers.some(p => p.Name === player.Name)) {
+                mergedPlayers.push(player);
+            }
+        });
+
+        localStorage.setItem("selectedplayers", JSON.stringify(mergedPlayers));
+    };
+
 
     return (
         <div className="z-10 min-h-screen flex flex-col justify-center items-center">
@@ -76,10 +95,7 @@ const PlayerList = () => {
                 </table>
             </div>
             <div className="my-4">
-                <Button onClick={() =>{
-                    const selectedPlayers = data.filter(player => selectedplayerarray.includes(player.Name));
-                    localStorage.setItem("selectedplayers", JSON.stringify(selectedPlayers))
-                }}>
+                <Button onClick={handleSelection}>
                     <Anchor to="Squad">Done</Anchor>
                 </Button>
             </div>
