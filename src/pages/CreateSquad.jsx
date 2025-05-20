@@ -6,7 +6,7 @@ import PlayerList from '../components/PlayerList';
 const CreateSquad = () => {
 
   return (
-    <div className='flex justify-start  min-h-screen px-2 lg:px-6'>
+    <div className='flex justify-center items-center min-h-screen px-2 lg:px-6'>
       <motion.div
         className="z-10 flex flex-col gap-6 items-center"
         initial={{ opacity: 0, y: 20 }}
