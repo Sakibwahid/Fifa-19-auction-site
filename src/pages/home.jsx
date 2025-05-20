@@ -4,7 +4,7 @@ import { Button } from '../components/Button';
 import { Anchor } from '../components/Anchor';
 const Home = () => {
     return (
-        <div className='h-screen relative flex flex-col justify-center items-center'>
+        <div className='md:h-full p-2 relative flex flex-col justify-center items-center'>
             <div className='flex flex-col justify-center items-center gap-6'>
                 <Text variant='heading' className='font-[orbitron] text-white text-center'>
                     Enjoy your FIFA like never before
