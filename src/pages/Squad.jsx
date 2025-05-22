@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text } from '../components/Text';
 import { Trash2 } from 'lucide-react';
-
+import { useNavigate } from 'react-router-dom';
 export const Squad = () => {
     const [selectedPlayers, setSelectedPlayers] = useState(() => {
         return JSON.parse(localStorage.getItem('selectedplayers')) || [];
@@ -32,6 +32,13 @@ export const Squad = () => {
         const updatedPlayers = selectedPlayers.filter(player => player.Name !== playerName);
         setSelectedPlayers(updatedPlayers);
         localStorage.setItem('selectedplayers', JSON.stringify(updatedPlayers));
+    };
+
+    const navigate = useNavigate();
+    const handleClick = (player) => {
+        navigate(`/players/${player.Name}`, {
+            state: { player }
+        });
     };
 
     return (
@@ -83,7 +90,7 @@ export const Squad = () => {
                                                 </td>
                                             )}
                                             <td className="px-3 py-2 border-r border-gray-500 flex justify-between items-center">
-                                                <span>{player.Name} - {player.Overall}</span>
+                                                <span onClick={() => handleClick(player)}>{player.Name} - {player.Overall}</span>
                                                 <button
                                                     onClick={() => delPlayer(player.Name)}
                                                     title={`Delete player ${player.Name}`}

@@ -5,8 +5,16 @@ import PlayerFetch from "./PlayerFetch";
 import { Button } from "./Button";
 import { ContextApi } from "./ContextApi";
 import { Anchor } from "../components/Anchor";
+import { useNavigate } from "react-router-dom";
 
 const PlayerList = () => {
+    const navigate = useNavigate();
+    const handleClick = (player) => {
+        navigate(`/players/${player.Name}`, {
+            state: { player }
+        });
+    }
+
     const [SearchedPosition, setPosition] = useState("All players");
     const [SearchedRating, setRating] = useState(85);
     const { selectedplayerarray, setSelectedPlayerArray } = useContext(ContextApi);
@@ -33,6 +41,7 @@ const PlayerList = () => {
 
         localStorage.setItem("selectedplayers", JSON.stringify(mergedPlayers));
     };
+
 
 
     return (
@@ -83,7 +92,7 @@ const PlayerList = () => {
                                             }
                                         }}
                                     />
-                                    <div>
+                                    <div onClick={() => handleClick(player)} className="flex items-center gap-2 cursor-pointer">
                                         {player.Name}
                                     </div>
                                 </td>

@@ -3,7 +3,11 @@ import { Authcontext } from '../auth/Authcontext';
 import { motion } from "framer-motion";
 import { Text } from '../components/Text';
 import PlayerList from '../components/PlayerList';
+import { useNavigate } from 'react-router-dom';
+
+
 const CreateSquad = () => {
+
 
   return (
     <div className='flex justify-center items-center min-h-screen px-2 lg:px-6'>
