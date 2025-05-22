@@ -42,7 +42,7 @@ export const Squad = () => {
     };
 
     return (
-        <div className='mt-10 w-full p-2 flex flex-col justify-center items-center'>
+        <div className='mt-4 w-full p-2 flex flex-col justify-center items-center'>
             <div className='z-10 w-full md:w-[80%] lg:w-[60%] flex flex-col gap-6 justify-center items-center'>
                 <div className='w-full flex flex-col justify-center gap-6 items-center'>
                     <Text variant='heading'>Selected Player</Text>
@@ -58,7 +58,7 @@ export const Squad = () => {
                         No Players Selected
                     </div>
                 ) : (
-                    <div className="w-full backdrop-blur-xl bg-white/5 rounded-xl shadow-md overflow-auto">
+                    <div className="mt-10 w-full backdrop-blur-xl bg-white/5 rounded-xl shadow-md overflow-auto">
                         <table className="w-full border-collapse text-left text-white z-50">
                             <thead>
                                 <tr className="bg-white/10 border-b border-gray-500">
