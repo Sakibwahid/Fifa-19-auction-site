@@ -3,6 +3,7 @@ import { Text } from '../components/Text';
 import { Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 export const Squad = () => {
+    
     const [selectedPlayers, setSelectedPlayers] = useState(() => {
         return JSON.parse(localStorage.getItem('selectedplayers')) || [];
     });
