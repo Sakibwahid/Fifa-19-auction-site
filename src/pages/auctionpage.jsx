@@ -11,8 +11,7 @@ import PlayerCard from "../components/playercard";
 const Auctionpage = () => {
   const { date, number, bidding, maxrating, } = useContext(ContextApi);
 
-  const [randomPosition, setRandomPosition] = useState("");
-  const [randomPlayer, setRandomPlayer] = useState(null);
+  const [randomPosition, setRandomPosition] = useState("");  const [randomPlayer, setRandomPlayer] = useState(null);
 
   const { data, loading, error } = PlayerFetch({ SearchedPosition: randomPosition, SearchedRating: maxrating });
 
