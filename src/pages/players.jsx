@@ -22,7 +22,7 @@ const Players = () => {
                         type="text"
                         className="text-sm text-gray-300"
                         label="Select Player's Position"
-                        options={["All players", "ST", "CB", "RB", "LB", "CAM", "GK", "CDM", "CM", "LCM", "LM" ,"RM", "RCM", "LB", "RB", "LW", "RW"]}
+                        options={["All players", "ST", "CB", "RB", "LB", "CAM", "GK", "CDM", "CM", "LCM", "LM" ,"RM", "RCM", "LCB", "LW", "RW" ,"LS","RCB", "RS", "CF", "RF", "LF", "SW", "WB"]}
                         onChange={(e) => setPosition(e.target.value)}
                     />
                     <Input
@@ -30,7 +30,7 @@ const Players = () => {
                         label="Minimum Rating"
                         className="text-sm text-white"
                         placeholder="85"
-                        options={["85", "80", "90"]}
+                        options={["85", "83", "90"]}
                         onChange={(e) => setRating(Number(e.target.value))}
                     />
                 </div>

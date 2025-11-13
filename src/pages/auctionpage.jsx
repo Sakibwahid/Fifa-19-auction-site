@@ -7,7 +7,7 @@ import Players from "../pages/players";
 import { Button } from "../components/Button";
 import PlayerFetch from "../components/PlayerFetch";
 import PlayerCard from "../components/playercard";
-
+ 
 const Auctionpage = () => {
   const { date, number, bidding, maxrating, } = useContext(ContextApi);
 
@@ -63,6 +63,7 @@ const Auctionpage = () => {
           {randomPlayer && <PlayerCard player={randomPlayer} />}
         </div>
       </div>
+      
 
     </div>
   )
