@@ -10,7 +10,7 @@ const PlayerFetch = ({ SearchedPosition, SearchedRating }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("/FIFA19.csv", { responseType: "blob" });
+                const response = await axios.get("/kl.csv", { responseType: "blob" });
 
                 const reader = new FileReader();
                 reader.onload = () => {

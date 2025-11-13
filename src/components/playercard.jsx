@@ -32,7 +32,7 @@ const PlayerCard = ({ player }) => {
                         <Text variant="para" className="font-semibold text-yellow-900">{player.Value}</Text>
                     </div>
                     <div className="w-30 h-38 col-span-2 mt-8 p-2 flex flex-col justify-end items-end">
-                        <img src={playerImage} alt={player.Name} className="w-30 h-40" />
+                        <img  src={`/player_photos/${player.ID}.png`} alt={player.Name} className="w-full h-30" />
                     </div>
                 </div>
                 <div>

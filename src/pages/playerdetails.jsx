@@ -60,7 +60,7 @@ const PlayerDetails = () => {
                         </div>
                     </div>
                     <div className="flex justify-center items-center">
-                        <img src={playerimage} className="w-[250px] h-[350px]" />
+                        <img src={`/player_photos/${player.ID}.png`} className="w-[250px] h-[250px]" />
                     </div>
                     <div className="flex gap-2 justify-between">
                         <div className="flex flex-col gap-2">
